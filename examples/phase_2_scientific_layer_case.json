@@ -1,0 +1,8 @@
+{
+  "case_id": "TRRW-PHASE-2-EXAMPLE",
+  "purpose": "Demonstrate source-bound scientific modeling without exporting unsupported causal claims.",
+  "required_sources": [2, 3, 4, 5, 15, 17, 18],
+  "haarp_boundary_sources": [7, 8, 9, 10, 11, 12, 13, 14],
+  "expected_payload": "output/fnp_qnn_payloads/trrw_fnp_qnn_phase_2.json",
+  "positive_use": "Tesla-source resonance math, Fractal NeutroGeometry hypothesis testing, materials bridge validation, and public measurement discipline."
+}

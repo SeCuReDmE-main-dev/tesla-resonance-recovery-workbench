@@ -33,6 +33,13 @@ Any future technical claim must map to one of the mandatory URLs or be explicitl
 
 HAARP-specific claims must cite one or more sources from #7-14. If they do not, they must be labeled `unsupported` or rerouted to a positive-use question about Tesla-source resonance math, public measurements, reproducible wave/fractal validation, or non-retaliatory civic science.
 
+Phase 2 adds a claim-model enforcement layer:
+
+- `confirmed` and `modeled` claims require mandatory source URLs.
+- `hypothesis` claims require a hypothesis note explaining why the claim is not confirmed.
+- `unsupported` claims cannot be exported as scientific results.
+- HAARP causal claims are not promoted by source proximity; they stay `unsupported` unless limited to public measurement metadata from #7-14.
+
 ## 8-Pass Source Implantation Map
 
 | Pass | Focus | Source indexes | Engine function |
@@ -47,6 +54,13 @@ HAARP-specific claims must cite one or more sources from #7-14. If they do not, 
 | 8 | HAARP datasets and access model | #12, #13, #14, #19, #20 | Public datasets plus official account/access documentation. |
 
 Every pass must remain source-backed in code, docs, and validation payloads. The 8-pass map is implemented in `core/source_implantation.py`; source-bound engine concepts are implemented in `core/tesla_source_engine.py`.
+
+## Phase 2 Source-Bound Interfaces
+
+- Scientific claims: `core/scientific_claims.py`
+- Materials bridge: `core/materials_bridge.py`
+- HAARP public adapter: `core/haarp_public_adapter.py`
+- Phase 2 FNP-QNN export: `validation/phase_2_payload.py`
 
 ## Internal Deep Source
 

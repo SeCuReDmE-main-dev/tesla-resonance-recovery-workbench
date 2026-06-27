@@ -52,6 +52,17 @@ def mandatory_source_urls() -> list[str]:
     return [source.url for source in MANDATORY_SOURCE_TRUTH_URLS]
 
 
+def source_by_index(index: int) -> MandatorySource:
+    for source in MANDATORY_SOURCE_TRUTH_URLS:
+        if source.index == index:
+            return source
+    raise ValueError(f"unknown mandatory source index: {index}")
+
+
+def source_urls_by_index(indexes: tuple[int, ...] | list[int]) -> list[str]:
+    return [source_by_index(index).url for index in indexes]
+
+
 def validate_mandatory_sources() -> None:
     if len(MANDATORY_SOURCE_TRUTH_URLS) != 20:
         raise ValueError("mandatory source ledger must contain exactly 20 URLs")

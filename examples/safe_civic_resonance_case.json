@@ -1,0 +1,8 @@
+{
+  "case_id": "TRRW-CIVIC-001",
+  "title": "Safe civic resonance audit case",
+  "goal": "Demonstrate source-grounded resonance analysis without targeting, retaliation, or unsupported causality.",
+  "allowed_use": "public education, reproducible math, FNP-QNN validation",
+  "blocked_use": "weather control, earthquake claims, biological effects, weaponization, retaliation"
+}
+

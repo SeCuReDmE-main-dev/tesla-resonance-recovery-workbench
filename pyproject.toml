@@ -1,0 +1,11 @@
+[project]
+name = "tesla-resonance-recovery-workbench"
+version = "0.1.0"
+description = "Source-grounded Tesla resonance, Fractal NeutroGeometry, and FNP-QNN validation workbench."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+

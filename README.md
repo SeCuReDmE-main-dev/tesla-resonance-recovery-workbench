@@ -19,6 +19,23 @@ It focuses on:
 
 It is not a HAARP replica, weapon model, weather-control tool, biological-effects tool, or retaliation system.
 
+## 8-pass source implantation
+
+The engine is built around a fixed 8-pass source implantation contract:
+
+| Pass | Focus | Mandatory source indexes |
+| --- | --- | --- |
+| 1 | Tesla high-frequency core | #2 |
+| 2 | Tesla energy transmission | #3 |
+| 3 | Tesla apparatus architecture | #4 |
+| 4 | Tesla natural mediums | #5 |
+| 5 | Fractal NeutroGeometry math anchor | #15 |
+| 6 | Validation and supporting theory | #1, #6, #16, #17, #18 |
+| 7 | HAARP public primary boundary | #7, #8, #9, #10, #11 |
+| 8 | HAARP datasets and access model | #12, #13, #14, #19, #20 |
+
+The first 5 passes are the deep core-engine layer. The final 3 passes add validation, public HAARP evidence boundaries, materials bridge, datasets, and access documentation. The implementation lives in `core/source_implantation.py` and is exported in every FNP-QNN validation payload.
+
 ## Who this is for
 
 - Students learning scientific source discipline and reproducible modeling.

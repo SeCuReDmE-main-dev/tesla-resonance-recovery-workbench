@@ -33,6 +33,21 @@ Any future technical claim must map to one of the mandatory URLs or be explicitl
 
 HAARP-specific claims must cite one or more sources from #7-14. If they do not, they must be labeled `unsupported` or rerouted to a positive-use question about Tesla-source resonance math, public measurements, reproducible wave/fractal validation, or non-retaliatory civic science.
 
+## 8-Pass Source Implantation Map
+
+| Pass | Focus | Source indexes | Engine function |
+| --- | --- | --- | --- |
+| 1 | Tesla high-frequency core | #2 | Resonance primitives and high-frequency language. |
+| 2 | Tesla energy transmission | #3 | Transmission-medium coupling claims. |
+| 3 | Tesla apparatus architecture | #4 | Abstract apparatus topology without operational optimization. |
+| 4 | Tesla natural mediums | #5 | Natural-medium propagation as positive-use civic science. |
+| 5 | Fractal NeutroGeometry math anchor | #15 | Wave-friction and multi-scale uncertainty interpretation. |
+| 6 | Validation and supporting theory | #1, #6, #16, #17, #18 | FNP-QNN bridge, Tesla notes, neutrosophic context, pseudogap, and polymer transport. |
+| 7 | HAARP public primary boundary | #7, #8, #9, #10, #11 | Official/public primary HAARP boundary. |
+| 8 | HAARP datasets and access model | #12, #13, #14, #19, #20 | Public datasets plus official account/access documentation. |
+
+Every pass must remain source-backed in code, docs, and validation payloads. The 8-pass map is implemented in `core/source_implantation.py`; source-bound engine concepts are implemented in `core/tesla_source_engine.py`.
+
 ## Internal Deep Source
 
 - Local Fractal NeutroGeometry book source: `C:\Users\jeans\Desktop\livre pdf\final version francaise\version francaise final\FractalNeutroGeometry_VERSION_FRANCAISE_FINALE.pdf`

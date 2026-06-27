@@ -10,11 +10,15 @@ from pathlib import Path
 from core.evidence_gate import validate_claim_sources
 from core.fractal_neutrogeometry import wave_friction_reading
 from core.resonance import lc_resonance_hz, plasma_frequency_hz, standing_wave_nodes
+from core.source_implantation import implantation_plan_payload, validate_eight_pass_source_implantation
 from core.source_truth import MANDATORY_SOURCE_TRUTH_URLS, mandatory_source_urls, validate_mandatory_sources
+from core.tesla_source_engine import concept_payloads, validate_source_bound_concepts
 
 
 def build_payload() -> dict:
     validate_mandatory_sources()
+    validate_eight_pass_source_implantation()
+    validate_source_bound_concepts()
     source_urls = [
         MANDATORY_SOURCE_TRUTH_URLS[1].url,
         MANDATORY_SOURCE_TRUTH_URLS[2].url,
@@ -40,6 +44,8 @@ def build_payload() -> dict:
         "source_categories": ["tesla_primary", "fractal_neutrogeometry_context", "fnp_qnn_validation"],
         "source_urls": source_urls,
         "mandatory_source_truth_urls": mandatory_source_urls(),
+        "eight_pass_source_implantation": implantation_plan_payload(),
+        "source_bound_concepts": concept_payloads(),
         "resonance": {
             "lc_frequency_hz": lc_resonance_hz(10e-6, 100e-12),
             "standing_wave_nodes_m": standing_wave_nodes(10.0, 2.0),

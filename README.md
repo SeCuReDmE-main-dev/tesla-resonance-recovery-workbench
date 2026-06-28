@@ -2,6 +2,8 @@
 
 Open-source research workbench for source-grounded Tesla resonance reconstruction, Fractal NeutroGeometry wave-friction analysis, and FNP-QNN validation cases.
 
+> **Official school governance.** This is a classroom/research workbench, not a validated energy, medical, safety, or physical-claim engine. The maintained school route supports Codex/OpenAI or Antigravity/Gemini only. See [SCHOOL_TOOL_GOVERNANCE.md](SCHOOL_TOOL_GOVERNANCE.md) and [AGENTS.md](AGENTS.md).
+
 This project is designed to be used with local Python first, and optionally with Codex/OpenAI or Google Antigravity-style authenticated development accounts. Users bring their own account when they want assisted coding, review, or agentic validation. This repository does not include shared API keys, embedded secrets, or a required hosted backend.
 
 ## What this is

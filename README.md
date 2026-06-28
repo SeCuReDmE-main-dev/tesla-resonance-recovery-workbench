@@ -1,5 +1,8 @@
 # Tesla Resonance Recovery Workbench
 
+> **Development status.** This school tool is currently tagged **pre-alpha / in development**. External PRs are not evaluated for merge until the maintained tool reaches a stable, fully functional 100% classroom release after the pre-alpha phase. Issues and forks remain allowed, but official PR review is paused until that stability gate is met.
+
+
 Open-source research workbench for source-grounded Tesla resonance reconstruction, Fractal NeutroGeometry wave-friction analysis, and FNP-QNN validation cases.
 
 > **Official school governance.** This is a classroom/research workbench, not a validated energy, medical, safety, or physical-claim engine. The maintained school route supports Codex/OpenAI or Antigravity/Gemini only. See [SCHOOL_TOOL_GOVERNANCE.md](SCHOOL_TOOL_GOVERNANCE.md) and [AGENTS.md](AGENTS.md).
@@ -120,3 +123,5 @@ Blocked uses:
 HAARP-related claims must cite public sources #7-14 from `docs/source_ledger.md`. Unsupported causal claims are rerouted to positive-use analysis: Tesla-source resonance mathematics, public measurements, reproducible wave/fractal validation, and non-retaliatory civic science.
 
 The 1910 Tesla Council used in private writing is a source-grounded historical simulation, not a literal resurrection or authority claim.
+
+

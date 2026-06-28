@@ -4,6 +4,14 @@
 
 **Attribution:** Jean-Sebastien Beaulieu · [ORCID 0009-0007-2904-0443](https://orcid.org/0009-0007-2904-0443) · [SecuredMe](https://securedme.ca) · [Tesla Resonance Recovery Workbench](https://tesla-workbench.securedme.ca)
 
+<!-- SECUREDME-SUITE-BADGES:START -->
+[![Issues](https://img.shields.io/github/issues/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench?color=161B6A)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/issues)
+[![Milestones](https://img.shields.io/badge/milestones-M0--M7-23B8FF)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/milestones)
+[![Project Board](https://img.shields.io/badge/project-kanban-6F42FF)](https://github.com/users/SeCuReDmE-main-dev/projects/3)
+[![Branch](https://img.shields.io/badge/branch-main-0E7490)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/tree/main)
+<!-- SECUREDME-SUITE-BADGES:END -->
+
+
 
 ## School Authentication And Secret Boundary
 This repository is a small SecuredMe school tool. Official classroom use must not require `.env` files, API keys, raw tokens, or local model secrets. Student and teacher workflows must use Codex/OpenAI or Antigravity/Gemini through browser WebAuth, fingerprinted session approval, and encrypted local session records when authentication is needed.
@@ -135,6 +143,7 @@ Blocked uses:
 HAARP-related claims must cite public sources #7-14 from `docs/source_ledger.md`. Unsupported causal claims are rerouted to positive-use analysis: Tesla-source resonance mathematics, public measurements, reproducible wave/fractal validation, and non-retaliatory civic science.
 
 The 1910 Tesla Council used in private writing is a source-grounded historical simulation, not a literal resurrection or authority claim.
+
 
 
 

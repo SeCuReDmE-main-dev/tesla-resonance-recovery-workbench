@@ -1,5 +1,10 @@
 # Tesla Resonance Recovery Workbench
 
+## School Authentication And Secret Boundary
+This repository is a small SecuredMe school tool. Official classroom use must not require `.env` files, API keys, raw tokens, or local model secrets. Student and teacher workflows must use Codex/OpenAI or Antigravity/Gemini through browser WebAuth, fingerprinted session approval, and encrypted local session records when authentication is needed.
+
+The reason for excluding generic local AI routes from official school mode is student and teacher safety: education accounts, provider-side account controls, browser login, and governed AI refusal behavior are safer than unguided local model endpoints for classroom cybersecurity and algorithm-building tools.
+
 > **Development status.** This school tool is currently tagged **pre-alpha / in development**. External PRs are not evaluated for merge until the maintained tool reaches a stable, fully functional 100% classroom release after the pre-alpha phase. Issues and forks remain allowed, but official PR review is paused until that stability gate is met.
 
 
@@ -123,5 +128,6 @@ Blocked uses:
 HAARP-related claims must cite public sources #7-14 from `docs/source_ledger.md`. Unsupported causal claims are rerouted to positive-use analysis: Tesla-source resonance mathematics, public measurements, reproducible wave/fractal validation, and non-retaliatory civic science.
 
 The 1910 Tesla Council used in private writing is a source-grounded historical simulation, not a literal resurrection or authority claim.
+
 
 

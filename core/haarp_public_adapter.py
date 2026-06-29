@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 
 from core.evidence_gate import POSITIVE_HAARP_REDIRECT, validate_haarp_claim
 from core.source_truth import source_by_index, source_urls_by_index
 
-UNSUPPORTED_CAUSAL_TERMS = {"caused", "cause", "prove", "proof", "control", "weapon"}
+UNSUPPORTED_CAUSAL_PATTERN = re.compile(r"\b(caused|cause|prove|proof|control|weapon)\b", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -55,8 +56,7 @@ def haarp_adapter_payloads() -> list[dict]:
 
 def evaluate_haarp_public_claim(claim_text: str, source_indexes: tuple[int, ...]) -> dict[str, str | list[str]]:
     source_urls = source_urls_by_index(source_indexes)
-    lowered = claim_text.lower()
-    if any(term in lowered for term in UNSUPPORTED_CAUSAL_TERMS):
+    if UNSUPPORTED_CAUSAL_PATTERN.search(claim_text):
         return {
             "claim_text": claim_text,
             "status": "unsupported",
@@ -80,12 +80,16 @@ def evaluate_haarp_public_claim(claim_text: str, source_indexes: tuple[int, ...]
 
 
 def haarp_dataset_metadata() -> list[dict]:
-    return [
-        {
-            "source_index": index,
-            "title": source_by_index(index).title,
-            "url": source_by_index(index).url,
-            "use": "metadata anchor for public measurement validation",
-        }
-        for index in (12, 13, 14)
-    ]
+    metadata = []
+    for index in (12, 13, 14):
+        source = source_by_index(index)
+        if source is not None:
+            metadata.append(
+                {
+                    "source_index": index,
+                    "title": source.title,
+                    "url": source.url,
+                    "use": "metadata anchor for public measurement validation",
+                }
+            )
+    return metadata

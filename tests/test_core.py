@@ -230,6 +230,11 @@ def test_haarp_causal_claim_is_unsupported_even_with_public_source():
     assert "positive-use analysis" in result["message"]
 
 
+def test_haarp_causal_guard_does_not_match_substrings():
+    result = evaluate_haarp_public_claim("HAARP public metadata improves because measurements are archived", (7,))
+    assert result["status"] == "modeled"
+
+
 def test_haarp_public_measurement_claim_can_be_modeled():
     result = evaluate_haarp_public_claim("HAARP public measurement metadata case", (7, 8))
     assert result["status"] == "modeled"
@@ -242,3 +247,19 @@ def test_phase_2_payload_shape_and_sources():
     assert payload["materials_bridge"]
     assert payload["haarp_boundary_status"]["status"] == "unsupported"
     assert len(payload["mandatory_source_truth_urls"]) == 20
+
+
+def test_scientific_claim_validation_rejects_non_string_fields():
+    claim = ScientificClaim(
+        None,
+        "A bounded claim.",
+        "modeled",
+        (2,),
+        "Use source #2.",
+    )
+    try:
+        claim.validate()
+    except ValueError as exc:
+        assert "claim key" in str(exc)
+    else:
+        raise AssertionError("non-string claim key should be rejected")

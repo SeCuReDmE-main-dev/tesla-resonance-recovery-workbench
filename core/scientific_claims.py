@@ -22,16 +22,18 @@ class ScientificClaim:
         return source_urls_by_index(self.source_indexes)
 
     def validate(self) -> None:
-        if not self.key.strip():
-            raise ValueError("claim key is required")
-        if not self.claim_text.strip():
-            raise ValueError("claim_text is required")
-        if not self.positive_use_note.strip():
-            raise ValueError("positive_use_note is required")
+        if not isinstance(self.key, str) or not self.key.strip():
+            raise ValueError("claim key is required and must be a non-empty string")
+        if not isinstance(self.claim_text, str) or not self.claim_text.strip():
+            raise ValueError("claim_text is required and must be a non-empty string")
+        if not isinstance(self.positive_use_note, str) or not self.positive_use_note.strip():
+            raise ValueError("positive_use_note is required and must be a non-empty string")
         if self.evidence_label not in VALID_EVIDENCE_LABELS:
             raise ValueError(f"invalid evidence_label: {self.evidence_label}")
-        if self.evidence_label == "hypothesis" and not self.hypothesis_note.strip():
-            raise ValueError("hypothesis claims require hypothesis_note")
+        if self.evidence_label == "hypothesis" and (
+            not isinstance(self.hypothesis_note, str) or not self.hypothesis_note.strip()
+        ):
+            raise ValueError("hypothesis claims require a non-empty hypothesis_note string")
         validate_claim_sources(self.evidence_label, self.source_urls)
         haarp_result = validate_haarp_claim(self.evidence_label, self.source_urls, self.claim_text)
         if haarp_result["status"] == "blocked_misuse":

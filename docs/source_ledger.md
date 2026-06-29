@@ -50,5 +50,5 @@ Every pass must remain source-backed in code, docs, and validation payloads. The
 
 ## Internal Deep Source
 
-- Local Fractal NeutroGeometry book source: `C:\Users\jeans\Desktop\livre pdf\final version francaise\version francaise final\FractalNeutroGeometry_VERSION_FRANCAISE_FINALE.pdf`
-- Extracted workspace text: `C:\Users\jeans\Documents\help prof aguilar\fractal_book_extract\FractalNeutroGeometry_FINAL_VERSION.txt`
+- Local Fractal NeutroGeometry book source: `[local maintainer path redacted]`
+- Extracted workspace text: `[local maintainer path redacted]`

@@ -77,6 +77,17 @@ The engine is built around a fixed 8-pass source implantation contract:
 
 The first 5 passes are the deep core-engine layer. The final 3 passes add validation, public HAARP evidence boundaries, materials bridge, datasets, and access documentation. The implementation lives in `core/source_implantation.py` and is exported in every FNP-QNN validation payload.
 
+## Phase 2 scientific layer
+
+Phase 2 turns the 8-pass source contract into source-bound scientific modeling code:
+
+- `core/scientific_claims.py` validates claim text, evidence label, source indexes, source URLs, positive-use notes, and hypothesis notes.
+- `core/materials_bridge.py` adds bounded pseudogap and semiconducting-polymer transport profiles from sources #17 and #18.
+- `core/haarp_public_adapter.py` exposes HAARP public source and dataset metadata while rerouting unsupported causal claims.
+- `validation/phase_2_payload.py` exports Phase 2 FNP-QNN payloads.
+
+Unsupported claims are not exported as scientific results. HAARP causal wording remains unsupported unless it can be mapped to public sources #7-14 and kept inside public measurement metadata.
+
 ## Who this is for
 
 - Students learning scientific source discipline and reproducible modeling.
@@ -129,6 +140,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pytest
 python -m validation.fnp_qnn_payload --out output\fnp_qnn_payloads
+python -m validation.phase_2_payload --out output\fnp_qnn_payloads
 ```
 
 The repository uses Python standard library modules for the initial scaffold. Future numerical backends must remain optional unless the validation need is clearly documented.

@@ -1,3 +1,4 @@
+from core.algoquest_qbit_adapter import build_learning_event, build_payload_learning_event
 from core.evidence_gate import HAARP_SOURCE_URLS, classify_request_text, validate_claim_sources, validate_haarp_claim
 from core.fractal_neutrogeometry import normalize_fractal_dimension, wave_friction_reading
 from core.haarp_public_adapter import evaluate_haarp_public_claim, haarp_adapter_payloads, haarp_dataset_metadata
@@ -263,3 +264,57 @@ def test_scientific_claim_validation_rejects_non_string_fields():
         assert "claim key" in str(exc)
     else:
         raise AssertionError("non-string claim key should be rejected")
+
+
+def test_algoquest_event_uses_case_pointer_only():
+    payload = build_payload()
+    event = payload["algoquest_event"]
+
+    assert event["schema"] == "securedme.education.student-learning-event.v1"
+    assert event["app_slug"] == "tesla-workbench"
+    assert event["artifact_ref"].startswith("tesla-workbench:case:")
+    assert event["score"] == 93
+    assert event["threshold"] == 93
+    assert event["raw_secret_stored"] is False
+    assert event["dry_run"] is True
+    assert event["workflow"] == "fnp_qnn_validation_export"
+
+    event_blob = repr(event)
+    assert payload["case_id"] not in event["artifact_ref"]
+    assert "mandatory_source_truth_urls" not in event
+    assert "scientific_results" not in event
+    assert "materials_bridge" not in event
+    assert "student_name" not in event_blob
+    assert "api_key" not in event_blob
+    assert "https://" not in event_blob
+
+
+def test_algoquest_phase_2_event_keeps_scientific_payload_out():
+    payload = build_phase_2_payload()
+    event = payload["algoquest_event"]
+
+    assert event["app_slug"] == "tesla-workbench"
+    assert event["artifact_ref"].startswith("tesla-workbench:case:")
+    assert event["workflow"] == "phase_2_validation_export"
+    assert "scientific_results" not in event
+    assert "materials_bridge" not in event
+    assert "source_urls" not in event
+    assert "https://" not in repr(event)
+
+
+def test_algoquest_event_rejects_wrong_app_artifact():
+    try:
+        build_learning_event("wrong-app:case:abc")
+    except ValueError as exc:
+        assert "tesla-workbench" in str(exc)
+    else:
+        raise AssertionError("wrong app artifact should be rejected")
+
+
+def test_algoquest_payload_event_requires_case_id():
+    try:
+        build_payload_learning_event({})
+    except ValueError as exc:
+        assert "case_id" in str(exc)
+    else:
+        raise AssertionError("missing case_id should be rejected")

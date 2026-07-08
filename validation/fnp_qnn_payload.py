@@ -7,6 +7,7 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+from core.algoquest_qbit_adapter import build_payload_learning_event
 from core.evidence_gate import validate_claim_sources
 from core.fractal_neutrogeometry import wave_friction_reading
 from core.resonance import lc_resonance_hz, plasma_frequency_hz, standing_wave_nodes
@@ -38,7 +39,7 @@ def build_payload() -> dict:
         boundary_instability=0.44,
         evidence_label="modeled",
     )
-    return {
+    payload = {
         "case_id": "TRRW-FNP-QNN-001",
         "title": "Tesla-source resonance with Fractal NeutroGeometry wave-friction reading",
         "source_categories": ["tesla_primary", "fractal_neutrogeometry_context", "fnp_qnn_validation"],
@@ -56,6 +57,8 @@ def build_payload() -> dict:
         "evidence_label": "modeled",
         "misuse_boundary": "No targeting, weapon, weather, earthquake, or biological-effect claims.",
     }
+    payload["algoquest_event"] = build_payload_learning_event(payload, workflow="fnp_qnn_validation_export")
+    return payload
 
 
 def main() -> None:

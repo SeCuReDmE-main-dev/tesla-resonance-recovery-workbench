@@ -7,6 +7,7 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+from core.algoquest_qbit_adapter import build_payload_learning_event
 from core.fractal_neutrogeometry import wave_friction_reading
 from core.haarp_public_adapter import (
     evaluate_haarp_public_claim,
@@ -35,7 +36,7 @@ def build_phase_2_payload() -> dict:
         measurement_uncertainty=0.18,
         evidence_label="hypothesis",
     )
-    return {
+    payload = {
         "case_id": "TRRW-FNP-QNN-PHASE-2",
         "title": "Phase 2 source-bound scientific modeling layer",
         "mandatory_source_truth_urls": mandatory_source_urls(),
@@ -49,6 +50,8 @@ def build_phase_2_payload() -> dict:
         "hierarchy": "I -> I_system^S -> D_f -> dF -> i_fractal",
         "misuse_boundary": "Unsupported causal claims are not exported as scientific results.",
     }
+    payload["algoquest_event"] = build_payload_learning_event(payload, workflow="phase_2_validation_export")
+    return payload
 
 
 def main() -> None:

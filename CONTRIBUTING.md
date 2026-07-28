@@ -1,34 +1,43 @@
 # Contributing
 
-## SecuredMe Education Governance Alignment
+## SecuredMe Education Governance
 
-- Current phase: pre-alpha / in development.
-- Repository license: Secured Educational License 2.0 (SEL-2.0), local metadata reference LicenseRef-SEL-2.0.
-- Official AI-assisted classroom routes: Codex/OpenAI and Antigravity/Gemini only.
-- Do not add Ollama Cloud, uncensored local AI, raw-token student flows, or unknown agent providers as official school routes.
-- Preserve human-review boundaries; do not claim production, clinical, regulatory, enforcement, safety-critical, or autonomous authority readiness.
-- Private modified copies, broken forks, and unreviewed rewrites are not a maintainer support obligation.
+This repository is part of the SecuredMe Education suite and is currently pre-alpha. Contribution intake is intentionally conservative until the alpha classroom stability gate is reached.
 
+- Tool: Tesla Resonance Recovery Workbench
+- License: Secured Educational License 2.0 (SEL-2.0)
+- Local metadata reference: LicenseRef-SEL-2.0
+- Operational branch: main
+- Official classroom AI routes: Codex/OpenAI and Antigravity/Gemini only
+- Gateway stance: gateway-compatible when the shared SecuredMe gateway lane is configured; this repository must not store gateway secrets
 
-Contributions are welcome when they preserve the source-grounded, positive-use purpose of this workbench.
+## What Helps
 
-## Requirements
+Useful public issues include reproducible bugs, documentation gaps, test failures, accessibility problems, unclear student/teacher flows, and evidence-bound safety wording improvements.
 
-- Keep all claims tied to a source category: `tesla_source`, `fractal_neutrogeometry`, `modern_physics`, or `model_assumption`.
-- Preserve evidence labels: `confirmed`, `modeled`, `hypothesis`, `unsupported`.
-- Do not add private email content, unpublished blog drafts, or sensitive political context.
-- Do not add transmitter targeting, weaponization, retaliation, weather-control, earthquake, or biological-effect tooling.
-- Do not commit credentials, API keys, OAuth tokens, or `.env` files.
+Future code contributions should be small, test-backed, and scoped to this tool. They must preserve the suite hierarchy, the local secret boundary, human review, and the documented gateway contract.
+
+## What Is Not Accepted
+
+Do not submit or request:
+
+- API keys, tokens, cookies, .env values, private cPanel details, private student data, or private correspondence;
+- raw-token student flows or browser-session export;
+- Ollama Cloud, uncensored local AI, unknown model providers, or unsupported agent routes as official school behavior;
+- autonomous enforcement, clinical, regulatory, safety-critical, or production-readiness claims;
+- offensive, abusive, fraud, bypass, credential theft, surveillance-abuse, or criminal automation workflows;
+- broad rewrites that make the maintained classroom version harder to audit.
 
 ## Validation
 
-Run before submitting changes:
+Before maintainer-owned changes are pushed, run the narrow validation for this tool when available:
 
-```powershell
+`powershell
 python -m pytest
-python -m validation.fnp_qnn_payload --out output\fnp_qnn_payloads
-```
+`
 
-## Optional AI-Assisted Development
+If the validation surface is not available on the machine, document the blocker in the issue or commit notes without inventing a passing result.
 
-You may use your own Codex/OpenAI or Google Antigravity-style authenticated development account. Do not share credentials in issues, pull requests, commits, logs, or examples.
+## Security Reports
+
+Security issues must follow SECURITY.md. Do not publish exploit details, credentials, personal data, private files, or operational infrastructure details in a public issue.

@@ -1,0 +1,37 @@
+schema: securedme.tool-doc.v2
+slug: tesla-workbench
+title: Tesla Resonance Recovery Workbench
+version: 0.1.0
+status: local-research
+license: LicenseRef-SEL-2.0
+summary: A reproducible local workbench for recovery, comparison, and validation of
+  resonance records.
+identity:
+  logo: docs/assets/education/education-icon.png
+  family: Tesla Resonance Recovery Workbench
+runtime:
+  type: research
+  availability: pending
+  public_url: https://tesla-recovery.securedme.ca
+source:
+  repository: https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench
+  issues: https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/issues
+documentation:
+  public_root: docs/public
+  source_language: en
+  languages:
+  - en
+  - fr
+  - es
+commands:
+  install:
+  - python -m venv .venv
+  - .venv\Scripts\python -m pip install -e .
+  start:
+  - Consult README.md for a reviewed recovery payload
+  test:
+  - .venv\Scripts\python -m pytest
+boundaries:
+  authority: Recovered records and resonance comparisons remain historical or computational
+    evidence, not physical validation.
+  human_review_required: true

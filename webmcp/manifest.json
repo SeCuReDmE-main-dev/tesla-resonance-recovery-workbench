@@ -1,0 +1,411 @@
+{
+  "schema": "securedme.webmcp.v1",
+  "product": {
+    "slug": "tesla-workbench",
+    "canonicalStateOwner": "algoquest"
+  },
+  "slug": "tesla-workbench",
+  "canonicalStateOwner": "algoquest",
+  "tools": [
+    {
+      "name": "tesla_calculate_lc_resonance",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Calculate ideal LC resonance from positive component values.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "inductanceH": {
+            "type": "number"
+          },
+          "capacitanceF": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "inductanceH",
+          "capacitanceF"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_calculate_damped_response",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Calculate normalized damped oscillator response.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "driveFrequencyHz": {
+            "type": "number"
+          },
+          "naturalFrequencyHz": {
+            "type": "number"
+          },
+          "dampingRatio": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "driveFrequencyHz",
+          "naturalFrequencyHz",
+          "dampingRatio"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_calculate_standing_wave_nodes",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Calculate ideal one-dimensional standing-wave node positions.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "lengthM": {
+            "type": "number"
+          },
+          "wavelengthM": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "lengthM",
+          "wavelengthM"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_calculate_plasma_frequency",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Calculate electron plasma frequency from a positive density.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "electronDensityM3": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "electronDensityM3"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_build_wave_friction_reading",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Build a bounded Fractal NeutroGeometry hypothesis reading.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "system": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "scaleMin": {
+            "type": "number"
+          },
+          "scaleMax": {
+            "type": "number"
+          },
+          "carrier": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "dF": {
+            "type": "number"
+          },
+          "dMin": {
+            "type": "number"
+          },
+          "dMax": {
+            "type": "number"
+          },
+          "observedLossRatio": {
+            "type": "number"
+          },
+          "boundaryInstability": {
+            "type": "number"
+          },
+          "measurementUncertainty": {
+            "type": "number"
+          },
+          "evidenceLabel": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [
+          "system",
+          "scaleMin",
+          "scaleMax",
+          "carrier",
+          "dF",
+          "dMin",
+          "dMax",
+          "observedLossRatio",
+          "boundaryInstability"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_classify_request_safety",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Classify a request against positive-use workbench boundaries.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_validate_scientific_claim",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Validate an explicitly source-bound scientific claim.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "claim": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "claim"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_evaluate_haarp_public_claim",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Evaluate a HAARP statement only against public-source boundaries.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "claimText": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "sourceIndexes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 128
+          }
+        },
+        "required": [
+          "claimText",
+          "sourceIndexes"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_inspect_source_ledger",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Inspect the maintained source-implantation ledger.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "tesla_build_validation_payload",
+      "mode": "STAGE",
+      "effect": "STAGE",
+      "description": "Stage a validation payload without operating physical equipment.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "caseRef": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "measurements": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "caseRef",
+          "measurements"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "securedme_companion_context",
+      "mode": "READ",
+      "effect": "READ",
+      "description": "Return a sanitized neutral workbench projection.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    },
+    {
+      "name": "securedme_qbit_plan_handoff",
+      "mode": "STAGE",
+      "effect": "STAGE",
+      "description": "Prepare a Qbit return proposal without changing progression.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "missionRef": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "required": [
+          "missionRef",
+          "summary"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object"
+      },
+      "availability": "available",
+      "handler": {
+        "kind": "python",
+        "module": "core.webmcp"
+      }
+    }
+  ],
+  "boundaries": {
+    "authority": "Scientific claims require human review.",
+    "secrets": "No credentials are returned.",
+    "externalWrites": "No physical or external operation is performed.",
+    "heroProgression": "AlgoQuest alone owns Hero Book progression.",
+    "physicalControl": false,
+    "weaponization": false,
+    "causalWeatherClaims": false,
+    "scientificAuthority": "human"
+  },
+  "theme": {
+    "source": "assets/landing/secureme.ca-product/education/desing/stitch_securedme_education_hub_design_system/stitch_securedme_education_hub_design_system/design.md",
+    "sourceStatus": "fallback_missing_product_stitch"
+  }
+}

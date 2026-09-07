@@ -1,0 +1,156 @@
+{
+  "schema": "securedme.webmcp.fixtures.v1",
+  "tools": {
+    "tesla_calculate_lc_resonance": {
+      "validInput": {
+        "inductanceH": 1,
+        "capacitanceF": 1
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_calculate_damped_response": {
+      "validInput": {
+        "driveFrequencyHz": 1,
+        "naturalFrequencyHz": 1,
+        "dampingRatio": 1
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_calculate_standing_wave_nodes": {
+      "validInput": {
+        "lengthM": 1,
+        "wavelengthM": 1
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_calculate_plasma_frequency": {
+      "validInput": {
+        "electronDensityM3": 1
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_build_wave_friction_reading": {
+      "validInput": {
+        "system": "fixture",
+        "scaleMin": 1,
+        "scaleMax": 1,
+        "carrier": "fixture",
+        "dF": 1,
+        "dMin": 1,
+        "dMax": 1,
+        "observedLossRatio": 1,
+        "boundaryInstability": 1
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_classify_request_safety": {
+      "validInput": {
+        "text": "fixture"
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_validate_scientific_claim": {
+      "validInput": {
+        "claim": {}
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_evaluate_haarp_public_claim": {
+      "validInput": {
+        "claimText": "fixture",
+        "sourceIndexes": []
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_inspect_source_ledger": {
+      "validInput": {},
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "tesla_build_validation_payload": {
+      "validInput": {
+        "caseRef": "fixture",
+        "measurements": {}
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "staged"
+    },
+    "securedme_companion_context": {
+      "validInput": {},
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "completed"
+    },
+    "securedme_qbit_plan_handoff": {
+      "validInput": {
+        "missionRef": "fixture",
+        "summary": "fixture"
+      },
+      "invalidInput": {
+        "unexpected": true
+      },
+      "expectedStatus": "staged"
+    }
+  },
+  "journeys": [
+    [
+      "securedme_companion_context",
+      "tesla_calculate_lc_resonance",
+      "securedme_qbit_plan_handoff"
+    ],
+    [
+      "securedme_companion_context",
+      "tesla_calculate_damped_response",
+      "securedme_qbit_plan_handoff"
+    ],
+    [
+      "securedme_companion_context",
+      "tesla_calculate_standing_wave_nodes",
+      "securedme_qbit_plan_handoff"
+    ],
+    [
+      "securedme_companion_context",
+      "tesla_calculate_plasma_frequency",
+      "securedme_qbit_plan_handoff"
+    ],
+    [
+      "securedme_companion_context",
+      "tesla_build_wave_friction_reading",
+      "securedme_qbit_plan_handoff"
+    ],
+    [
+      "securedme_companion_context",
+      "tesla_classify_request_safety",
+      "securedme_qbit_plan_handoff"
+    ]
+  ]
+}

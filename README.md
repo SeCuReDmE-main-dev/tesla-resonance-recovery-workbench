@@ -1,196 +1,72 @@
 # Tesla Resonance Recovery Workbench
 
-<!-- SECUREDME-ZENODO:START -->
-<p align="center">
-  <a href="https://doi.org/10.5281/zenodo.21893189"><img alt="Zenodo DOI: 10.5281/zenodo.21893189" src="https://img.shields.io/badge/Zenodo%20DOI-10.5281%2Fzenodo.21893189-1682D4?style=for-the-badge" /></a>
-</p>
-<!-- SECUREDME-ZENODO:END -->
+![Tesla Resonance Recovery Workbench — SecuredMe Education](docs/assets/repository/readme-banner-2026.png)
 
-<!-- SECUREDME-CPAI-MESH:START -->
-<p align="center">
-  <img alt="CodeProject.AI Server embedded mesh node" src="https://img.shields.io/badge/CodeProject.AI%20Server-Embedded%20Mesh%20Node-1F6FEB?style=for-the-badge" />
-  <img alt="YOLO real local inference validated" src="https://img.shields.io/badge/YOLO-Real%20Local%20Inference-16A34A?style=for-the-badge" />
-</p>
-<!-- SECUREDME-CPAI-MESH:END -->
+[![License SEL-2.0](https://img.shields.io/badge/license-SEL--2.0-6F42FF)](LICENSE)
+[![Pre-alpha](https://img.shields.io/badge/status-pre--alpha-0E7490)](AGENTS.md)
+[![Issues](https://img.shields.io/github/issues/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/issues)
+[![Main history](https://img.shields.io/github/last-commit/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/main)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/commits/main/)
+[![SPONSORED BY E2B FOR STARTUPS](https://img.shields.io/badge/SPONSORED%20BY-E2B%20FOR%20STARTUPS-ff3001?style=for-the-badge&labelColor=black)](https://e2b.dev/startups)
 
-[Embedded CodeProject.AI node operations](infra/codeproject-ai/README.md)
+Calculate bounded resonance examples and prepare source-bound scientific validation cases.
 
-[![SecuredMe Education Suite public calendar](https://img.shields.io/badge/SecuredMe%20Education%20Suite-public%20calendar%20%7C%20pre--alpha%20%7C%20active%20public%20development-5484ED?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://calendrier.securedme.ca)
+[Public surface](https://tesla-recovery.securedme.ca/) · [Tool documentation](https://securedme-main-dev.github.io/securedme-scholarium/en/tools/tesla-workbench/) · [Education hub](https://securedme.ca/product/education/)
 
-**Attribution:** Jean-Sebastien Beaulieu · [ORCID 0009-0007-2904-0443](https://orcid.org/0009-0007-2904-0443) · [SecuredMe](https://securedme.ca) · [Tesla Resonance Recovery Workbench](https://tesla-workbench.securedme.ca)
+**Status:** pre-alpha, active public development. Public pages and a successful local test do not establish a deployed school service. E2B sponsorship recognition is separate from runtime availability and included quota.
 
-<!-- SECUREDME-SUITE-BADGES:START -->
-[![Issues](https://img.shields.io/github/issues/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench?color=161B6A)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/issues)
-[![Milestones](https://img.shields.io/badge/milestones-M0--M7-23B8FF)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/milestones)
-[![Project Board](https://img.shields.io/badge/project-kanban-6F42FF)](https://github.com/users/SeCuReDmE-main-dev/projects/3)
-[![Branch](https://img.shields.io/badge/branch-main-0E7490)](https://github.com/SeCuReDmE-main-dev/tesla-resonance-recovery-workbench/tree/main)
-<!-- SECUREDME-SUITE-BADGES:END -->
+## How it works
 
-<!-- SECUREDME-STARTUP-SUPPORT:START -->
-<p align="center">
-  <a href="https://e2b.dev/startups">
-    <img alt="Gateway-ready E2B audit lane" src="https://img.shields.io/badge/Gateway--ready-E2B%20audit%20lane-FF8800?style=for-the-badge" />
-  </a>
-  <a href="https://www.datadoghq.com/partner/datadog-for-startups/">
-    <img alt="Gateway-ready Datadog observability" src="https://img.shields.io/badge/Gateway--ready-Datadog%20observability-632CA6?style=for-the-badge&amp;logo=datadog&amp;logoColor=white" />
-  </a>
-</p>
+Transport-neutral Python tools calculate ideal LC resonance, damped response and standing-wave examples. Validation payloads are proposals for review; the workbench does not operate physical equipment.
 
-> **Gateway support acknowledgement.** This SecuredMe school tool is gateway-compatible. E2B audit support and Datadog observability are routed through the shared SecuredMe gateway when that lane is configured; this repository does not claim a direct E2B or Datadog runtime dependency by default, and no E2B or Datadog secret is stored in this README.
-<!-- SECUREDME-STARTUP-SUPPORT:END -->
+## Local development
 
-> **Maintainer intake during active finishing week.** This repository is maintained directly on `main` by the SecuredMe maintainer. Public issues are open for bug reports, documentation corrections, security-safe observations, and reproducible feedback, but opening an issue does not promise a response or a delivery date. Pull requests are not accepted during the active code-finishing week; use issues only until this notice is replaced.
+Record the checkout and existing changes before editing:
 
+```powershell
+git status --short --branch
+git rev-parse HEAD
+```
 
-
-
-## School Authentication And Secret Boundary
-This repository is a small SecuredMe school tool. Official classroom use must not require `.env` files, API keys, raw tokens, or local model secrets. Student and teacher workflows must use Codex/OpenAI or Antigravity/Gemini through browser WebAuth, fingerprinted session approval, and encrypted local session records when authentication is needed.
-
-Both host adapters implement the shared `securedme.education.webauth-template.v1` policy and are auditable through the Gateway. That proves policy compatibility, not a deployed Tesla Workbench login. Provider callback, account binding, session expiry, logout, recovery, and accessible browser acceptance remain required before live-login claims.
-
-The reason for excluding generic local AI routes from official school mode is student and teacher safety: education accounts, provider-side account controls, browser login, and governed AI refusal behavior are safer than unguided local model endpoints for classroom cybersecurity and algorithm-building tools.
-
-> **Development status.** This school tool is currently **pre-alpha — active public development**. Public issues remain open for intake, but no response or delivery date is promised. Pull requests are paused during active development.
-
-> **SecuredMe Education visual theme.** This pre-alpha school tool uses the shared SecuredMe Education open-source visual identity. See [assets/securedme/education](assets/securedme/education) for light/dark logo and thin banner assets.
-
-
-Open-source research workbench for source-grounded Tesla resonance reconstruction, Fractal NeutroGeometry wave-friction analysis, and FNP-QNN validation cases.
-
-> **Official school governance.** This is a classroom/research workbench, not a validated energy, medical, safety, or physical-claim engine. The maintained school route supports Codex/OpenAI or Antigravity/Gemini only. See [SCHOOL_TOOL_GOVERNANCE.md](SCHOOL_TOOL_GOVERNANCE.md) and [AGENTS.md](AGENTS.md).
-
-> **License.** This project uses the Secured Educational License 2.0 (SEL-2.0). It is provided for education, research, simulation, classroom training, and supervised learning. Misuse, unsafe private forks, unsupported provider routes, and unsupervised authority claims are not maintained or endorsed by the official school version. See [LICENSE](LICENSE), [NOTICE](NOTICE), [DISCLAIMER](DISCLAIMER), and [SAFETY.md](SAFETY.md).
-
-This project is designed to be used with local Python first, and optionally with Codex/OpenAI or Google Antigravity-style authenticated development accounts. Users bring their own account when they want assisted coding, review, or agentic validation. This repository does not include shared API keys, embedded secrets, or a required hosted backend.
-
-## What this is
-
-Tesla Resonance Recovery Workbench is a positive-use scientific tool for reconstructing resonance problems from primary sources, testing mathematical interpretations, and packaging reproducible cases for FNP-QNN validation.
-
-It focuses on:
-
-- Tesla-source resonance reconstruction;
-- wave transmission, loss, coupling, and standing-wave analysis;
-- Fractal NeutroGeometry variables: `D_f`, `D_f_hat`, `dF`, `i_fractal`;
-- evidence labels: `confirmed`, `modeled`, `hypothesis`, `unsupported`;
-- a fixed 20-source mandatory URL ledger for source-of-truth validation;
-- civic and educational transparency.
-
-It is not a HAARP replica, weapon model, weather-control tool, biological-effects tool, or retaliation system.
-
-## 8-pass source implantation
-
-The engine is built around a fixed 8-pass source implantation contract:
-
-| Pass | Focus | Mandatory source indexes |
-| --- | --- | --- |
-| 1 | Tesla high-frequency core | #2 |
-| 2 | Tesla energy transmission | #3 |
-| 3 | Tesla apparatus architecture | #4 |
-| 4 | Tesla natural mediums | #5 |
-| 5 | Fractal NeutroGeometry math anchor | #15 |
-| 6 | Validation and supporting theory | #1, #6, #16, #17, #18 |
-| 7 | HAARP public primary boundary | #7, #8, #9, #10, #11 |
-| 8 | HAARP datasets and access model | #12, #13, #14, #19, #20 |
-
-The first 5 passes are the deep core-engine layer. The final 3 passes add validation, public HAARP evidence boundaries, materials bridge, datasets, and access documentation. The implementation lives in `core/source_implantation.py` and is exported in every FNP-QNN validation payload.
-
-## Phase 2 scientific layer
-
-Phase 2 turns the 8-pass source contract into source-bound scientific modeling code:
-
-- `core/scientific_claims.py` validates claim text, evidence label, source indexes, source URLs, positive-use notes, and hypothesis notes.
-- `core/materials_bridge.py` adds bounded pseudogap and semiconducting-polymer transport profiles from sources #17 and #18.
-- `core/haarp_public_adapter.py` exposes HAARP public source and dataset metadata while rerouting unsupported causal claims.
-- `validation/phase_2_payload.py` exports Phase 2 FNP-QNN payloads.
-
-Unsupported claims are not exported as scientific results. HAARP causal wording remains unsupported unless it can be mapped to public sources #7-14 and kept inside public measurement metadata.
-
-## Who this is for
-
-- Students learning scientific source discipline and reproducible modeling.
-- Teachers building classroom cases around resonance, evidence, and ethical tooling.
-- Researchers exploring fractal/neutrosophic interpretations of wave propagation.
-- Civic science users who want transparent models instead of fear-driven claims.
-
-## Use with Codex/OpenAI
-
-The workbench can be opened in a Codex/OpenAI coding environment for assisted implementation, review, testing, and documentation.
-
-Recommended workflow:
-
-1. Clone this repository locally.
-2. Sign in to your own Codex/OpenAI environment.
-3. Ask the assistant to inspect the repository before editing.
-4. Run the local tests and validation cases on your own machine.
-
-The project does not require OpenAI credentials for local validation. OpenAI account usage is optional and controlled by the user. Check current plan details on the official pricing and help pages:
-
-- https://chatgpt.com/pricing/
-- https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers
-
-## Use with Google Antigravity
-
-The workbench is also intended to be friendly to Google Antigravity-style authenticated development accounts.
-
-Recommended workflow:
-
-1. Clone this repository.
-2. Open it in Antigravity or a compatible local development environment.
-3. Use your own Google account and plan if you want agent-assisted work.
-4. Keep all generated validation outputs inside local `output/` folders unless you intentionally promote them.
-
-The project does not store Google credentials. Check current official Google AI and Antigravity plan information:
-
-- https://gemini.google/subscriptions/
-- https://support.google.com/googleone/answer/14534406
-
-## Education and school accounts
-
-The workbench is designed so students and teachers can run the core validation locally without paid accounts. School-managed Google/OpenAI accounts, education plans, institutional accounts, or affordable individual AI coding plans can help with agent-assisted exploration, but they are optional.
-
-Do not assume all school accounts have the same limits. Always follow your institution's acceptable-use policy and privacy rules.
-
-## Local-first setup
+In a clean development checkout, use the committed lockfile or package manifest. The commands below are setup instructions, not a claim that every dependency or optional service has been verified:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pytest
-python -m validation.fnp_qnn_payload --out output\fnp_qnn_payloads
-python -m validation.phase_2_payload --out output\fnp_qnn_payloads
+python -m pip install pytest
 ```
 
-The repository uses Python standard library modules for the initial scaffold. Future numerical backends must remain optional unless the validation need is clearly documented.
+Run the relevant local checks from the repository root; the indicated `Set-Location` is needed only when starting from that root:
 
-## Validation with FNP-QNN
+```powershell
+python -m pytest
+```
 
-FNP-QNN-MVP is the validation/proof sandbox for this project:
+## Source map
 
-https://github.com/SeCuReDmE-main-dev/FNP-QNN-MVP
+- [core/resonance.py](core/resonance.py)
+- [core/webmcp.py](core/webmcp.py)
+- [validation](validation)
+- [tests](tests)
+- [docs](docs)
 
-This workbench exports structured cases that can be inspected, challenged, and imported into FNP-QNN validation flows. FNP-QNN is not treated as proof by authority. It is the reproducible simulator surface where claims become testable.
+## Practice exercise
 
-## Ethics and positive-use boundaries
+Calculate ideal LC resonance for positive component values, compare with the elementary formula, then state the assumptions and units.
 
-This project is built for transparency, education, scientific repair, and reproducible validation.
+During an individual course, learners choose suite tools to practice. The eight-week final project is the learner's own tool, submitted by the learner to an eligible hackathon after checking its age, AI, originality and licensing rules.
 
-Blocked uses:
+## Boundaries and privacy
 
-- transmitter targeting;
-- antenna-array optimization for operational systems;
-- weather, earthquake, or biological-effect claims without primary reproducible evidence;
-- retaliation language;
-- weaponization;
-- claims that Tesla's consciousness or literal soul has been recreated.
+No energy, medical, weather-control or validated physical-effect claim is established. A simulation and an exported payload are not experimental evidence. Public site availability still needs confirmation.
 
-HAARP-related claims must cite public sources #7-14 from `docs/source_ledger.md`. Unsupported causal claims are rerouted to positive-use analysis: Tesla-source resonance mathematics, public measurements, reproducible wave/fractal validation, and non-retaliatory civic science.
+The official school routes are Codex/OpenAI and Antigravity/Gemini with human review. Never distribute raw tokens, learner data, prompts or private correspondence. No hidden learner analytics are added. Public analytics require explicit consent; general autocapture and session replay remain disabled. Optional local technical telemetry is separate from learner records and product audit history.
 
-The 1910 Tesla Council used in private writing is a source-grounded historical simulation, not a literal resurrection or authority claim.
+See [AGENTS.md](AGENTS.md) and [SCHOOL_TOOL_GOVERNANCE.md](SCHOOL_TOOL_GOVERNANCE.md) for current authority and provider boundaries. Maintainer-authorized maintenance follows repository protections and required reviews. General contribution restrictions remain governed by [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## License, authorship and history
 
+The repository's actual license is [SEL-2.0](LICENSE). Keep the license, attribution, notices and safety boundaries when reusing the code.
 
+Jean-Sebastien Beaulieu · [ORCID 0009-0007-2904-0443](https://orcid.org/0009-0007-2904-0443) · [SecuredMe](https://securedme.ca/)
 
-
-
+[README source before curation](docs/archive/README-before-curation-2026-09-30.txt) retains the exact previous text, implementation journals and attribution. It is historical: its old telemetry commands, readiness claims and contribution dates are not current operating instructions. [Presentation history](docs/repository-presentation-history-2026-09-30.md) retains previous badges. [GitHub social image](docs/assets/repository/github-social-preview-2026.jpg) accompanies this README.
